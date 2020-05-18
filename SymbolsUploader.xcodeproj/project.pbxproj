@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0369F663246E537400199D95 /* UploadSymbolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0369F662246E537400199D95 /* UploadSymbolsView.swift */; };
+		0369F667246E54C600199D95 /* ConsoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0369F666246E54C600199D95 /* ConsoleView.swift */; };
 		03F1BD7D246E4D3F00FC027E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1BD7C246E4D3F00FC027E /* AppDelegate.swift */; };
 		03F1BD7F246E4D3F00FC027E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1BD7E246E4D3F00FC027E /* ContentView.swift */; };
 		03F1BD82246E4D3F00FC027E /* SymbolsUploader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 03F1BD80246E4D3F00FC027E /* SymbolsUploader.xcdatamodeld */; };
@@ -15,6 +17,12 @@
 		03F1BD8A246E4D4100FC027E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F1BD88246E4D4100FC027E /* Main.storyboard */; };
 		03F1BD96246E4D4200FC027E /* SymbolsUploaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1BD95246E4D4200FC027E /* SymbolsUploaderTests.swift */; };
 		03F1BDA1246E4D4200FC027E /* SymbolsUploaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1BDA0246E4D4200FC027E /* SymbolsUploaderUITests.swift */; };
+		03F1BDAF246E4D6500FC027E /* upload-symbols in Resources */ = {isa = PBXBuildFile; fileRef = 03F1BDAE246E4D6400FC027E /* upload-symbols */; };
+		03F1BDB1246E4D6E00FC027E /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1BDB0246E4D6E00FC027E /* Util.swift */; };
+		03F1BDB3246E4F0800FC027E /* SavedPathsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1BDB2246E4F0800FC027E /* SavedPathsManager.swift */; };
+		19F0E3288F1495BC4DEAABFB /* Pods_SymbolsUploader_SymbolsUploaderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CB2A8C791E9B115F7502639 /* Pods_SymbolsUploader_SymbolsUploaderUITests.framework */; };
+		68E7AFEDCB97B664E1958A28 /* Pods_SymbolsUploader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 816308DC137B53500C352A62 /* Pods_SymbolsUploader.framework */; };
+		8F8189B33C6A58CD01085404 /* Pods_SymbolsUploaderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B73FD7455CCBA8F5A69C19 /* Pods_SymbolsUploaderTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0213B17155463CC4AA741EBC /* Pods-SymbolsUploader-SymbolsUploaderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SymbolsUploader-SymbolsUploaderUITests.debug.xcconfig"; path = "Target Support Files/Pods-SymbolsUploader-SymbolsUploaderUITests/Pods-SymbolsUploader-SymbolsUploaderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		0369F662246E537400199D95 /* UploadSymbolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadSymbolsView.swift; sourceTree = "<group>"; };
+		0369F666246E54C600199D95 /* ConsoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleView.swift; sourceTree = "<group>"; };
 		03F1BD79246E4D3F00FC027E /* SymbolsUploader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SymbolsUploader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03F1BD7C246E4D3F00FC027E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03F1BD7E246E4D3F00FC027E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,6 +61,17 @@
 		03F1BD9C246E4D4200FC027E /* SymbolsUploaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SymbolsUploaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03F1BDA0246E4D4200FC027E /* SymbolsUploaderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolsUploaderUITests.swift; sourceTree = "<group>"; };
 		03F1BDA2246E4D4200FC027E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03F1BDAE246E4D6400FC027E /* upload-symbols */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "upload-symbols"; sourceTree = "<group>"; };
+		03F1BDB0246E4D6E00FC027E /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		03F1BDB2246E4F0800FC027E /* SavedPathsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPathsManager.swift; sourceTree = "<group>"; };
+		1E9AA44641C6811CCC5B01BD /* Pods-SymbolsUploader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SymbolsUploader.debug.xcconfig"; path = "Target Support Files/Pods-SymbolsUploader/Pods-SymbolsUploader.debug.xcconfig"; sourceTree = "<group>"; };
+		3CB2A8C791E9B115F7502639 /* Pods_SymbolsUploader_SymbolsUploaderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SymbolsUploader_SymbolsUploaderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D2FBFC30DAA0D533F89FA4B /* Pods-SymbolsUploader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SymbolsUploader.release.xcconfig"; path = "Target Support Files/Pods-SymbolsUploader/Pods-SymbolsUploader.release.xcconfig"; sourceTree = "<group>"; };
+		816308DC137B53500C352A62 /* Pods_SymbolsUploader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SymbolsUploader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E8420D473BD332B1D5B4BC9 /* Pods-SymbolsUploader-SymbolsUploaderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SymbolsUploader-SymbolsUploaderUITests.release.xcconfig"; path = "Target Support Files/Pods-SymbolsUploader-SymbolsUploaderUITests/Pods-SymbolsUploader-SymbolsUploaderUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B9FDCF140046C8A6C187FD2D /* Pods-SymbolsUploaderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SymbolsUploaderTests.release.xcconfig"; path = "Target Support Files/Pods-SymbolsUploaderTests/Pods-SymbolsUploaderTests.release.xcconfig"; sourceTree = "<group>"; };
+		C6B73FD7455CCBA8F5A69C19 /* Pods_SymbolsUploaderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SymbolsUploaderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEE2EEEE853908DAAF0249B7 /* Pods-SymbolsUploaderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SymbolsUploaderTests.debug.xcconfig"; path = "Target Support Files/Pods-SymbolsUploaderTests/Pods-SymbolsUploaderTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68E7AFEDCB97B664E1958A28 /* Pods_SymbolsUploader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F8189B33C6A58CD01085404 /* Pods_SymbolsUploaderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19F0E3288F1495BC4DEAABFB /* Pods_SymbolsUploader_SymbolsUploaderUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +109,8 @@
 				03F1BD94246E4D4200FC027E /* SymbolsUploaderTests */,
 				03F1BD9F246E4D4200FC027E /* SymbolsUploaderUITests */,
 				03F1BD7A246E4D3F00FC027E /* Products */,
+				82ABBD4D8BDBFD22CEBE7C72 /* Pods */,
+				1FAE5A070F9F5F89F67F489F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +129,11 @@
 			children = (
 				03F1BD7C246E4D3F00FC027E /* AppDelegate.swift */,
 				03F1BD7E246E4D3F00FC027E /* ContentView.swift */,
+				0369F662246E537400199D95 /* UploadSymbolsView.swift */,
+				0369F666246E54C600199D95 /* ConsoleView.swift */,
+				03F1BDB2246E4F0800FC027E /* SavedPathsManager.swift */,
+				03F1BDB0246E4D6E00FC027E /* Util.swift */,
+				03F1BDAE246E4D6400FC027E /* upload-symbols */,
 				03F1BD83246E4D4100FC027E /* Assets.xcassets */,
 				03F1BD88246E4D4100FC027E /* Main.storyboard */,
 				03F1BD8B246E4D4100FC027E /* Info.plist */,
@@ -138,6 +170,30 @@
 			path = SymbolsUploaderUITests;
 			sourceTree = "<group>";
 		};
+		1FAE5A070F9F5F89F67F489F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				816308DC137B53500C352A62 /* Pods_SymbolsUploader.framework */,
+				3CB2A8C791E9B115F7502639 /* Pods_SymbolsUploader_SymbolsUploaderUITests.framework */,
+				C6B73FD7455CCBA8F5A69C19 /* Pods_SymbolsUploaderTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		82ABBD4D8BDBFD22CEBE7C72 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1E9AA44641C6811CCC5B01BD /* Pods-SymbolsUploader.debug.xcconfig */,
+				6D2FBFC30DAA0D533F89FA4B /* Pods-SymbolsUploader.release.xcconfig */,
+				0213B17155463CC4AA741EBC /* Pods-SymbolsUploader-SymbolsUploaderUITests.debug.xcconfig */,
+				8E8420D473BD332B1D5B4BC9 /* Pods-SymbolsUploader-SymbolsUploaderUITests.release.xcconfig */,
+				DEE2EEEE853908DAAF0249B7 /* Pods-SymbolsUploaderTests.debug.xcconfig */,
+				B9FDCF140046C8A6C187FD2D /* Pods-SymbolsUploaderTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,9 +201,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03F1BDA5246E4D4200FC027E /* Build configuration list for PBXNativeTarget "SymbolsUploader" */;
 			buildPhases = (
+				CBC6D55F6B0B82651647986F /* [CP] Check Pods Manifest.lock */,
 				03F1BD75246E4D3F00FC027E /* Sources */,
 				03F1BD76246E4D3F00FC027E /* Frameworks */,
 				03F1BD77246E4D3F00FC027E /* Resources */,
+				16149B1B8168005940AA2158 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -162,6 +220,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03F1BDA8246E4D4200FC027E /* Build configuration list for PBXNativeTarget "SymbolsUploaderTests" */;
 			buildPhases = (
+				369B769EEE032152DC59D088 /* [CP] Check Pods Manifest.lock */,
 				03F1BD8D246E4D4200FC027E /* Sources */,
 				03F1BD8E246E4D4200FC027E /* Frameworks */,
 				03F1BD8F246E4D4200FC027E /* Resources */,
@@ -180,9 +239,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03F1BDAB246E4D4200FC027E /* Build configuration list for PBXNativeTarget "SymbolsUploaderUITests" */;
 			buildPhases = (
+				D2294BC8511536DD6AB4FB22 /* [CP] Check Pods Manifest.lock */,
 				03F1BD98246E4D4200FC027E /* Sources */,
 				03F1BD99246E4D4200FC027E /* Frameworks */,
 				03F1BD9A246E4D4200FC027E /* Resources */,
+				F3C78835D185E17CB983B771 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -243,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03F1BD8A246E4D4100FC027E /* Main.storyboard in Resources */,
+				03F1BDAF246E4D6500FC027E /* upload-symbols in Resources */,
 				03F1BD87246E4D4100FC027E /* Preview Assets.xcassets in Resources */,
 				03F1BD84246E4D4100FC027E /* Assets.xcassets in Resources */,
 			);
@@ -264,14 +326,121 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		16149B1B8168005940AA2158 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SymbolsUploader/Pods-SymbolsUploader-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SymbolsUploader/Pods-SymbolsUploader-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SymbolsUploader/Pods-SymbolsUploader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		369B769EEE032152DC59D088 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SymbolsUploaderTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBC6D55F6B0B82651647986F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SymbolsUploader-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2294BC8511536DD6AB4FB22 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SymbolsUploader-SymbolsUploaderUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3C78835D185E17CB983B771 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SymbolsUploader-SymbolsUploaderUITests/Pods-SymbolsUploader-SymbolsUploaderUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SymbolsUploader-SymbolsUploaderUITests/Pods-SymbolsUploader-SymbolsUploaderUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SymbolsUploader-SymbolsUploaderUITests/Pods-SymbolsUploader-SymbolsUploaderUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		03F1BD75246E4D3F00FC027E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				03F1BD7F246E4D3F00FC027E /* ContentView.swift in Sources */,
+				0369F663246E537400199D95 /* UploadSymbolsView.swift in Sources */,
 				03F1BD82246E4D3F00FC027E /* SymbolsUploader.xcdatamodeld in Sources */,
+				03F1BDB3246E4F0800FC027E /* SavedPathsManager.swift in Sources */,
+				0369F667246E54C600199D95 /* ConsoleView.swift in Sources */,
 				03F1BD7D246E4D3F00FC027E /* AppDelegate.swift in Sources */,
+				03F1BDB1246E4D6E00FC027E /* Util.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +602,7 @@
 		};
 		03F1BDA6246E4D4200FC027E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E9AA44641C6811CCC5B01BD /* Pods-SymbolsUploader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SymbolsUploader/SymbolsUploader.entitlements;
@@ -456,6 +626,7 @@
 		};
 		03F1BDA7246E4D4200FC027E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D2FBFC30DAA0D533F89FA4B /* Pods-SymbolsUploader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SymbolsUploader/SymbolsUploader.entitlements;
@@ -479,6 +650,7 @@
 		};
 		03F1BDA9246E4D4200FC027E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEE2EEEE853908DAAF0249B7 /* Pods-SymbolsUploaderTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -501,6 +673,7 @@
 		};
 		03F1BDAA246E4D4200FC027E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9FDCF140046C8A6C187FD2D /* Pods-SymbolsUploaderTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -523,6 +696,7 @@
 		};
 		03F1BDAC246E4D4200FC027E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0213B17155463CC4AA741EBC /* Pods-SymbolsUploader-SymbolsUploaderUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -543,6 +717,7 @@
 		};
 		03F1BDAD246E4D4200FC027E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E8420D473BD332B1D5B4BC9 /* Pods-SymbolsUploader-SymbolsUploaderUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

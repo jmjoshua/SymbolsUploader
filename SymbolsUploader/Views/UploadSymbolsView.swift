@@ -12,23 +12,33 @@ import SwiftShell
 struct UploadSymbolsView: View {
     @State private var plistPath: String = SavedPathsManager.fetchSavedDirectories().plist
     @State private var dsymPath: String = SavedPathsManager.fetchSavedDirectories().dsym
-    @State private var currentDropDestination: DirectoryType?
     @Binding var consoleOutput: String
     @Binding var isWaitingForDrop: Bool
     
     var body: some View {
         
         ZStack(alignment: .center) {
-            RoundedRectangle(cornerRadius: 17)
-                .stroke(Color(hex: "26243F"), lineWidth: 1)
+            // MARK: Card Stroke and Shadow
+            RoundedRectangle(cornerRadius: 17.0)
+                .stroke(Constants.HexColors.cardStroke, lineWidth: 3)
+                .shadow(color: Constants.HexColors.mainPosShadow, radius: 12, x: 6, y: 6)
+                .shadow(color: Constants.HexColors.mainNegShadow.opacity(0.5), radius: 12, x: -5, y: -5)
+            .frame(width: 566, height: 220, alignment: .center)
+            
+            // MARK: Card Background
+            RoundedRectangle(cornerRadius: 17.0)
+                .fill(
+                    isWaitingForDrop
+                        ? Constants.HexColors.cardDragAndDropFill
+                        : Constants.HexColors.mainFill
+            )
                 .frame(width: 566, height: 220, alignment: .center)
-                .foregroundColor(Color(hex: isWaitingForDrop ? "3b3861" : "151423"))
-                .shadow(color: Color(hex: "121120"), radius: 12, x: 6, y: 6)
-                .shadow(color: Color(hex: "232239").opacity(0.5), radius: 12, x: -5, y: -5)
+            
+            // MARK: Card Content
             VStack(alignment: .leading, spacing: 12) {
                 VStack(alignment: .leading, spacing: 8.0) {
                     Text("Symbols Uploader")
-                        .foregroundColor(Color(hex: "BDDAFF"))
+                        .foregroundColor(Constants.HexColors.cardTitleColor)
                         .fontWeight(.bold)
                     Spacer()
                     Text("Path to GoogleService-Info.plist")
@@ -40,20 +50,29 @@ struct UploadSymbolsView: View {
                         }) {
                             Text("browse...")
                         }
-                        TextField("~/.", text: $plistPath)
+                        TextField(Constants.Placeholders.textFieldPlaceholder, text: $plistPath)
+                        Button(action: {
+                            self.clearField(for: .plist)
+                        }) {
+                            Text("X")
+                        }
                     }
                     Spacer()
-                    Text("Path to dSYM files")
+                    Text("Path to dSYM file/folder")
                         .foregroundColor(.white)
                         .fontWeight(.regular)
                     HStack(alignment: .center, spacing: 10) {
                         Button(action: {
                             self.chooseDirectory(for: .dsym)
                         }) {
-                            Text("browse...")
+                            Text(Constants.ButtonTitles.browseButtonTitle)
                         }
-                        TextField("~/.", text: $dsymPath)
-                        
+                        TextField(Constants.Placeholders.textFieldPlaceholder, text: $dsymPath)
+                        Button(action: {
+                            self.clearField(for: .dsym)
+                        }) {
+                            Text("X")
+                        }
                     }
                 }
                 .padding(.vertical, 8.0)
@@ -66,7 +85,7 @@ struct UploadSymbolsView: View {
                     Button(action: {
                         self.uploadSymbols()
                     }) {
-                        Text("Upload Symbols")
+                        Text(Constants.ButtonTitles.uploadButtonTitle)
                             .fontWeight(.medium)
                             .font(.system(size: 10))
                             .foregroundColor(.white)
@@ -83,6 +102,17 @@ struct UploadSymbolsView: View {
         }
         .padding([.top, .leading, .trailing], 16.0)
         .onDrop(of: [(kUTTypeFileURL as String)], delegate: self)
+    }
+    
+    func clearField(for type: DirectoryType) {
+        switch type {
+        case .plist:
+            plistPath = ""
+        case .dsym:
+            dsymPath = ""
+        default:
+            return
+        }
     }
     
     func chooseDirectory(for type: DirectoryType) {
@@ -106,6 +136,8 @@ struct UploadSymbolsView: View {
                     plistPath = path
                 case .dsym:
                     dsymPath = path
+                default:
+                    return
                 }
                 
                 // Save value for next launch
@@ -124,9 +156,8 @@ struct UploadSymbolsView: View {
         consoleOutput = ""
         
         // Run script
-        let scriptFileName = "upload-symbols"
+        let scriptFileName = Constants.Scripts.uploadScriptFileName
         if let scriptPath = Bundle.main.url(forResource: scriptFileName, withExtension: "") {
-            //            consoleOutput = run(scriptPath.relativePath, "-gsp", plistPath, "-p", "ios", dsymPath).stdout
             let command = runAsync(scriptPath.relativePath, "-gsp", plistPath, "-p", "ios", dsymPath).onCompletion { command in
                 // be notified when the command is finished.
             }
@@ -185,5 +216,11 @@ extension UploadSymbolsView: DropDelegate {
         }
 
         return true
+    }
+}
+
+struct UploadSymbolsView_Previews: PreviewProvider {
+    static var previews: some View {
+        UploadSymbolsView(consoleOutput: .constant("Drag and drop a file or folder into the section above..."), isWaitingForDrop: .constant(true))
     }
 }

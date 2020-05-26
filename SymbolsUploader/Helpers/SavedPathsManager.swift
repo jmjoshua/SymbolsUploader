@@ -9,6 +9,12 @@
 import Foundation
 import SwiftUI
 
+enum DirectoryType: String {
+    case plist = "plistPath"
+    case dsym = "dsymPath"
+    case uuidDsym = "uuidDsymPath"
+}
+
 class SavedPathsManager {
     static func save(directory: String, type: DirectoryType) {
         UserDefaults.standard.set(directory, forKey: type.rawValue)
@@ -19,6 +25,10 @@ class SavedPathsManager {
         let plistPath = UserDefaults.standard.string(forKey: DirectoryType.plist.rawValue)
         let dsymPath = UserDefaults.standard.string(forKey: DirectoryType.dsym.rawValue)
         return(plistPath ?? "", dsymPath ?? "")
+    }
+    
+    static func fetchUUIDDirectory() -> String {
+        return UserDefaults.standard.string(forKey: DirectoryType.uuidDsym.rawValue) ?? ""
     }
 
     @discardableResult

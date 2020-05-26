@@ -134,12 +134,9 @@ struct UUIDView: View {
             self.consoleOutput += stdout.readSome() ?? ""
         }
         
-        // do something with ‘command’ while it is still running.
-        
-        do {
-            try command.finish() // wait for it to finish.
-        } catch {
-//            print("still running...")
+        // Fire the command and do something when it's done
+        command.onCompletion { (command) in
+            debugPrint("All done checking UUID!")
         }
     }
 }

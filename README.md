@@ -1,5 +1,6 @@
 # SymbolsUploader
-Crashlytics dSYM upload tool for macOS 
+<img src="https://github.com/jmjoshua/SymbolsUploader/blob/master/Images/Icon.png" width="20%">
+**Crashlytics dSYM upload tool for macOS**
 
 Originally created to make my workflow a bit easier but I used this project as an excuse to learn some SwiftUI and create my first mac application. Maintained as a side project.
 | Upload dSYM Files to Crashlytics  | Check dSYM File UUIDs |

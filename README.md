@@ -1,5 +1,5 @@
 # SymbolsUploader
-Crashlytics dSYM upload tool for MacOS 
+Crashlytics dSYM upload tool for macOS 
 
 
 ## [Download Now](https://www.dropbox.com/s/j9sdxyzsca22szt/SymbolsUploader.app.zip?dl=0)

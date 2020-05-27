@@ -13,6 +13,6 @@ To add your files/folders to any of the tools within the app, simply drag and dr
 <img src="https://github.com/jmjoshua/SymbolsUploader/blob/master/Images/drag_and_drop_screenshot.png" width="50%">
 
 
-## [Download Now](https://www.dropbox.com/s/j9sdxyzsca22szt/SymbolsUploader.app.zip?dl=0)
+## [Download Now](https://www.dropbox.com/s/hiknb14j8ddz45e/SymbolsUploader.zip?dl=0)
 Symbols Uploader is built to run on macOS Catalina and is available for free.
-You can download the app by clicking here: [Download Symbols Uploader](https://www.dropbox.com/s/j9sdxyzsca22szt/SymbolsUploader.app.zip?dl=0)
+You can download the app by clicking here: [Download Symbols Uploader](https://www.dropbox.com/s/hiknb14j8ddz45e/SymbolsUploader.zip?dl=0)

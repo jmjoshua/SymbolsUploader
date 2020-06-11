@@ -23,7 +23,6 @@ struct UUIDView: View {
                 .stroke(Constants.HexColors.cardStroke, lineWidth: 3)
                 .shadow(color: Constants.HexColors.mainPosShadow, radius: 12, x: 6, y: 6)
                 .shadow(color: Constants.HexColors.mainNegShadow.opacity(0.5), radius: 12, x: -5, y: -5)
-            .frame(width: 566, height: 220, alignment: .center)
             
             // MARK: Card Background
             RoundedRectangle(cornerRadius: 17.0)
@@ -32,7 +31,6 @@ struct UUIDView: View {
                         ? Constants.HexColors.cardDragAndDropFill
                         : Constants.HexColors.mainFill
             )
-                .frame(width: 566, height: 220, alignment: .center)
             
             // MARK: Card Content
             VStack(alignment: .leading, spacing: 12) {
@@ -40,10 +38,21 @@ struct UUIDView: View {
                     Text("UUID Check")
                         .foregroundColor(Constants.HexColors.cardTitleColor)
                         .fontWeight(.bold)
+                        .font(.headline)
                     Spacer()
-                    Text("Path to dSYM file")
-                        .foregroundColor(.white)
-                        .fontWeight(.regular)
+                    HStack {
+                        Text("Path to dSYM file")
+                            .foregroundColor(.white)
+                            .fontWeight(.regular)
+                        Spacer()
+                        if uuidDsymPath.count >= Constants.Numbers.textFieldLineLimit {
+                            Text(uuidDsymPath)
+                                .foregroundColor(Constants.HexColors.cardTitleColor)
+                                .fontWeight(.regular)
+                                .font(.system(size: 8))
+                                .truncationMode(.head)
+                        }
+                    }
                     HStack(alignment: .center, spacing: 10) {
                         Button(action: {
                             self.chooseDirectory(for: .uuidDsym)
@@ -51,6 +60,8 @@ struct UUIDView: View {
                             Text(Constants.ButtonTitles.browseButtonTitle)
                         }
                         TextField(Constants.Placeholders.textFieldDsymPlaceholder, text: $uuidDsymPath)
+                            .truncationMode(.head)
+                            .lineLimit(Constants.Numbers.textFieldLineLimit)
                         Button(action: {
                             self.clearField(for: .uuidDsym)
                         }) {
@@ -83,9 +94,9 @@ struct UUIDView: View {
                 
             }
             .padding(.all, 16.0)
-            .frame(width: 566, height: 200, alignment: .leading)
         }
         .padding([.top, .leading, .trailing], 16.0)
+        .frame(maxHeight: 250)
         .onDrop(of: [(kUTTypeFileURL as String)], delegate: self)
     }
     
@@ -158,13 +169,13 @@ extension UUIDView: DropDelegate {
     func performDrop(info: DropInfo) -> Bool {
         guard
             let itemProvider = info.itemProviders(for: [(kUTTypeFileURL as String)]).first
-        else { return false }
-
+            else { return false }
+        
         itemProvider.loadItem(forTypeIdentifier: (kUTTypeFileURL as String), options: nil) { item, error in
             guard
                 let data = item as? Data,
                 let url = URL(dataRepresentation: data, relativeTo: nil)
-            else { return }
+                else { return }
             
             // Check what kind of path this is
             let urlPath = url.relativePath
@@ -179,7 +190,7 @@ extension UUIDView: DropDelegate {
                 self.consoleOutput = "Please drop a dSYM file. Folders are not allowed for UUID check."
             }
         }
-
+        
         return true
     }
 }

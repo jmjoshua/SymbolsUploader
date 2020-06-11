@@ -25,6 +25,7 @@ struct ConsoleView: View {
                 Text(consoleTitleText)
                     .foregroundColor(Constants.HexColors.cardTitleColor)
                     .fontWeight(.bold)
+                    .font(.headline)
                 Spacer()
                 GroupBox() {
                     ScrollView {
@@ -42,7 +43,7 @@ struct ConsoleView: View {
                 }
             }
             .padding(.all, 16.0)
-            .frame(width: 566, height: 200, alignment: .leading)
+            .frame(width: 566, height: 200, alignment: .center)
         }
         .padding([.top, .leading, .trailing], 16.0)
     }

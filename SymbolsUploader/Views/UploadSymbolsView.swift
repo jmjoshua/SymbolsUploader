@@ -24,7 +24,6 @@ struct UploadSymbolsView: View {
                 .stroke(Constants.HexColors.cardStroke, lineWidth: 3)
                 .shadow(color: Constants.HexColors.mainPosShadow, radius: 12, x: 6, y: 6)
                 .shadow(color: Constants.HexColors.mainNegShadow.opacity(0.5), radius: 12, x: -5, y: -5)
-            .frame(width: 566, height: 220, alignment: .center)
             
             // MARK: Card Background
             RoundedRectangle(cornerRadius: 17.0)
@@ -33,7 +32,6 @@ struct UploadSymbolsView: View {
                         ? Constants.HexColors.cardDragAndDropFill
                         : Constants.HexColors.mainFill
             )
-                .frame(width: 566, height: 220, alignment: .center)
             
             // MARK: Card Content
             VStack(alignment: .leading, spacing: 12) {
@@ -41,10 +39,22 @@ struct UploadSymbolsView: View {
                     Text("Symbols Uploader")
                         .foregroundColor(Constants.HexColors.cardTitleColor)
                         .fontWeight(.bold)
+                        .font(.headline)
                     Spacer()
-                    Text("Path to GoogleService-Info.plist")
-                        .foregroundColor(.white)
-                        .fontWeight(.regular)
+                    HStack {
+                        Text("Path to GoogleService-Info.plist")
+                            .foregroundColor(.white)
+                            .fontWeight(.regular)
+                        Spacer()
+                        if plistPath.count >= Constants.Numbers.textFieldLineLimit {
+                            Text(plistPath)
+                                .foregroundColor(Constants.HexColors.cardTitleColor)
+                                .fontWeight(.regular)
+                                .font(.system(size: 8))
+                                .truncationMode(.head)
+                        }
+                        
+                    }
                     HStack(alignment: .center, spacing: 10) {
                         Button(action: {
                             self.chooseDirectory(for: .plist)
@@ -59,9 +69,19 @@ struct UploadSymbolsView: View {
                         }
                     }
                     Spacer()
-                    Text("Path to dSYM file/folder")
-                        .foregroundColor(.white)
-                        .fontWeight(.regular)
+                    HStack {
+                        Text("Path to dSYM file/folder")
+                            .foregroundColor(.white)
+                            .fontWeight(.regular)
+                        Spacer()
+                        if dsymPath.count >= Constants.Numbers.textFieldLineLimit {
+                            Text(dsymPath)
+                                .foregroundColor(Constants.HexColors.cardTitleColor)
+                                .fontWeight(.regular)
+                                .font(.system(size: 8))
+                                .truncationMode(.head)
+                        }
+                    }
                     HStack(alignment: .center, spacing: 10) {
                         Button(action: {
                             self.chooseDirectory(for: .dsym)
@@ -69,6 +89,8 @@ struct UploadSymbolsView: View {
                             Text(Constants.ButtonTitles.browseButtonTitle)
                         }
                         TextField(Constants.Placeholders.textFieldPlaceholder, text: $dsymPath)
+                            .truncationMode(.head)
+                            .lineLimit(Constants.Numbers.textFieldLineLimit)
                         Button(action: {
                             self.clearField(for: .dsym)
                         }) {
@@ -99,9 +121,9 @@ struct UploadSymbolsView: View {
                 
             }
             .padding(.all, 16.0)
-            .frame(width: 566, height: 200, alignment: .leading)
         }
         .padding([.top, .leading, .trailing], 16.0)
+        .frame(maxHeight: 250)
         .onDrop(of: [(kUTTypeFileURL as String)], delegate: self)
     }
     
@@ -189,13 +211,13 @@ extension UploadSymbolsView: DropDelegate {
     func performDrop(info: DropInfo) -> Bool {
         guard
             let itemProvider = info.itemProviders(for: [(kUTTypeFileURL as String)]).first
-        else { return false }
-
+            else { return false }
+        
         itemProvider.loadItem(forTypeIdentifier: (kUTTypeFileURL as String), options: nil) { item, error in
             guard
                 let data = item as? Data,
                 let url = URL(dataRepresentation: data, relativeTo: nil)
-            else { return }
+                else { return }
             
             // Check what kind of path this is
             let urlPath = url.relativePath
@@ -214,7 +236,7 @@ extension UploadSymbolsView: DropDelegate {
                 SavedPathsManager.save(directory: urlPath, type: .dsym)
             }
         }
-
+        
         return true
     }
 }

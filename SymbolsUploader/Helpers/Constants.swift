@@ -9,6 +9,10 @@
 import SwiftUI
 
 class Constants {
+    struct Numbers {
+        static let textFieldLineLimit = 57
+    }
+    
     struct Scripts {
         static let uploadScriptFileName = "upload-symbols"
         static let uuidCheckScriptName = "dwarfdump"

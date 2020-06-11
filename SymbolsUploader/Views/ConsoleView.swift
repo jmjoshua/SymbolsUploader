@@ -7,8 +7,10 @@
 //
 
 import SwiftUI
+//import lott
 
 struct ConsoleView: View {
+    @Binding var consoleTitleText: String
     @Binding var consoleText: String
     
     var body: some View {
@@ -20,7 +22,7 @@ struct ConsoleView: View {
                 .shadow(color: Constants.HexColors.mainPosShadow, radius: 12, x: 6, y: 6)
                 .shadow(color: Constants.HexColors.mainNegShadow.opacity(0.5), radius: 12, x: -5, y: -5)
             VStack(alignment: .leading, spacing: 12) {
-                Text("Console")
+                Text(consoleTitleText)
                     .foregroundColor(Constants.HexColors.cardTitleColor)
                     .fontWeight(.bold)
                 Spacer()
@@ -48,6 +50,6 @@ struct ConsoleView: View {
 
 struct ConsoleView_Previews: PreviewProvider {
     static var previews: some View {
-        ConsoleView(consoleText: .constant("2020-05-25 23:15:03.900068-0600 SymbolsUploader[12893:496372] Metal API Validation Enabled\n2020-05-25 23:15:03.940011-0600 SymbolsUploader[12893:496407] flock failed to lock maps file: errno = 35\n2020-05-25 23:15:03.940931-0600 SymbolsUploader[12893:496407] flock failed to lock maps file: errno = 35"))
+        ConsoleView(consoleTitleText: .constant("Console"), consoleText: .constant("2020-05-25 23:15:03.900068-0600 SymbolsUploader[12893:496372] Metal API Validation Enabled\n2020-05-25 23:15:03.940011-0600 SymbolsUploader[12893:496407] flock failed to lock maps file: errno = 35\n2020-05-25 23:15:03.940931-0600 SymbolsUploader[12893:496407] flock failed to lock maps file: errno = 35"))
     }
 }

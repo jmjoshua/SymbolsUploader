@@ -12,6 +12,7 @@ import SwiftShell
 struct UploadSymbolsView: View {
     @State private var plistPath: String = SavedPathsManager.fetchSavedDirectories().plist
     @State private var dsymPath: String = SavedPathsManager.fetchSavedDirectories().dsym
+    @Binding var consoleTitleText: String
     @Binding var consoleOutput: String
     @Binding var isWaitingForDrop: Bool
     
@@ -152,7 +153,8 @@ struct UploadSymbolsView: View {
     }
     
     func uploadSymbols() {
-        // Clear console
+        // Clear console and update title
+        consoleTitleText = "Console - Uploading symbols. Please wait..."
         consoleOutput = ""
         
         // Run script
@@ -168,6 +170,7 @@ struct UploadSymbolsView: View {
             
             // Fire the command and do something when it's done
             command.onCompletion { (command) in
+                self.consoleTitleText = "Console - Upload complete!"
                 debugPrint("All done uploading symbols!")
             }
         }
@@ -218,6 +221,6 @@ extension UploadSymbolsView: DropDelegate {
 
 struct UploadSymbolsView_Previews: PreviewProvider {
     static var previews: some View {
-        UploadSymbolsView(consoleOutput: .constant("Drag and drop a file or folder into the section above..."), isWaitingForDrop: .constant(true))
+        UploadSymbolsView(consoleTitleText: .constant("Console"), consoleOutput: .constant("Drag and drop a file or folder into the section above..."), isWaitingForDrop: .constant(true))
     }
 }

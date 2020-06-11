@@ -11,6 +11,7 @@ import SwiftShell
 
 struct UUIDView: View {
     @State private var uuidDsymPath: String = SavedPathsManager.fetchUUIDDirectory()
+    @Binding var consoleTitle: String
     @Binding var consoleOutput: String
     @Binding var isWaitingForDrop: Bool
     
@@ -60,6 +61,8 @@ struct UUIDView: View {
                 .padding(.vertical, 8.0)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .edgesIgnoringSafeArea(.all)
+                
+                Spacer()
                 
                 // Upload Symbols Button
                 HStack {
@@ -120,7 +123,8 @@ struct UUIDView: View {
     }
     
     func checkUUIDs() {
-        // Clear console
+        // Clear console and update title
+        consoleTitle = "Console - Checking UUIDs"
         consoleOutput = ""
         
         // Run script
@@ -136,6 +140,7 @@ struct UUIDView: View {
         
         // Fire the command and do something when it's done
         command.onCompletion { (command) in
+            self.consoleTitle = "Console - UUID check complete!"
             debugPrint("All done checking UUID!")
         }
     }
@@ -181,6 +186,6 @@ extension UUIDView: DropDelegate {
 
 struct UUIDView_Previews: PreviewProvider {
     static var previews: some View {
-        UUIDView(consoleOutput: .constant("Drag and drop a file or folder into the section above..."), isWaitingForDrop: .constant(true))
+        UUIDView(consoleTitle: .constant("Console"), consoleOutput: .constant("Drag and drop a file or folder into the section above..."), isWaitingForDrop: .constant(true))
     }
 }

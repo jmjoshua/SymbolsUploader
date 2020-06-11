@@ -10,6 +10,8 @@ import SwiftUI
 
 struct ContentView: View {
     @State var currentTab = 0
+    @State var consoleTitleText: String
+    @State var uuidConsoleTitleText: String
     @State var consoleOutput: String
     @State var uuidConsoleOutput: String
     @State var isWaitingForDrop: Bool
@@ -28,12 +30,16 @@ struct ContentView: View {
                 }.pickerStyle(SegmentedPickerStyle())
                     .frame(width: 300)
                 if currentTab == 0 {
-                    UploadSymbolsView(consoleOutput: $consoleOutput, isWaitingForDrop: $isWaitingForDrop)
-                    ConsoleView(consoleText: $consoleOutput)
+                    UploadSymbolsView(consoleTitleText: $consoleTitleText,
+                                      consoleOutput: $consoleOutput,
+                                      isWaitingForDrop: $isWaitingForDrop)
+                    ConsoleView(consoleTitleText: $consoleTitleText,
+                                consoleText: $consoleOutput)
                 }
                 else if currentTab == 1 {
-                    UUIDView(consoleOutput: $uuidConsoleOutput, isWaitingForDrop: $isWaitingForDrop)
-                    ConsoleView(consoleText: $uuidConsoleOutput)
+                    UUIDView(consoleTitle: $uuidConsoleTitleText, consoleOutput: $uuidConsoleOutput, isWaitingForDrop: $isWaitingForDrop)
+                    ConsoleView(consoleTitleText: $uuidConsoleTitleText,
+                                consoleText: $uuidConsoleOutput)
                 }
                 Spacer()
                 // Quit button
@@ -73,6 +79,6 @@ extension ContentView: DropDelegate {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(consoleOutput: "", uuidConsoleOutput: "", isWaitingForDrop: false)
+        ContentView(consoleTitleText: "Console", uuidConsoleTitleText: "Console", consoleOutput: "", uuidConsoleOutput: "", isWaitingForDrop: false)
     }
 }
